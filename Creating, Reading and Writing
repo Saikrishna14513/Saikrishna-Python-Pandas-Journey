@@ -1,1 +1,112 @@
+# Getting Started with Pandas
 
+To start working with pandas, the first thing I did was import the library:
+
+import pandas as pd
+
+# 📊 Understanding Data Structures in Pandas
+
+While learning pandas, I understood that there are two main data structures:
+
+DataFrame
+Series
+🔹 DataFrame
+
+A DataFrame is like a table that stores data in rows and columns. Each value in the table belongs to a specific row and column.
+
+For example:
+
+pd.DataFrame({'Yes': [50, 21], 'No': [131, 2]})
+
+In this example:
+
+The value 131 is in row 0 under the "No" column
+The value 50 is in row 0 under the "Yes" column
+
+DataFrames can store different types of data, not just numbers. They can also store strings:
+
+pd.DataFrame({
+    'Bob': ['I liked it.', 'It was awful.'],
+    'Sue': ['Pretty good.', 'Bland.']
+})
+🔹 Creating DataFrames
+
+I learned that the most common way to create a DataFrame is using a dictionary, where:
+
+Keys = column names
+Values = list of data
+
+By default, pandas assigns row numbers starting from 0.
+
+But we can also define our own row labels using the index:
+
+pd.DataFrame({
+    'Bob': ['I liked it.', 'It was awful.'],
+    'Sue': ['Pretty good.', 'Bland.']
+}, index=['Product A', 'Product B'])
+
+Here, instead of numeric rows, we use custom labels like Product A and Product B.
+
+🔹 Series
+
+A Series is basically a single column of data. It is like a list but with an index.
+
+Example:
+
+pd.Series([1, 2, 3, 4, 5])
+
+We can also assign custom labels and give it a name:
+
+pd.Series(
+    [30, 35, 40],
+    index=['2015 Sales', '2016 Sales', '2017 Sales'],
+    name='Product A'
+)
+
+So, I understood that:
+👉 A DataFrame is just multiple Series combined together
+
+📂 Reading Data from Files
+
+In real-world scenarios, we usually don’t create data manually. Instead, we work with existing datasets.
+
+One of the most common file formats is CSV (Comma-Separated Values).
+
+🔹 Reading a CSV File
+
+To load a CSV file into pandas, I used:
+
+wine_reviews = pd.read_csv("file_path.csv")
+🔹 Checking Data Size
+
+To understand the dataset size, I used:
+
+wine_reviews.shape
+
+This returns:
+
+Number of rows
+Number of columns
+🔹 Viewing Data
+
+To quickly look at the first few rows of the dataset:
+
+wine_reviews.head()
+
+This helps in understanding the structure and columns of the data.
+
+🔹 Setting Index Column
+
+Sometimes the dataset already has a column that should act as an index. In that case, I used:
+
+wine_reviews = pd.read_csv("file_path.csv", index_col=0)
+
+This tells pandas to use the first column as the index instead of creating a new one.
+
+✅ Summary
+Imported pandas using import pandas as pd
+Learned about DataFrame (table) and Series (single column)
+Created data using dictionaries and lists
+Used index to customize row labels
+Loaded real-world data using read_csv()
+Explored data using .shape and .head()
