@@ -1,1 +1,16 @@
+# THEORY:
+# Pandas is used to work with structured data (tables like Excel)
+# We load data into a DataFrame
 
+import pandas as pd
+
+# Creating a DataFrame manually (like loading data)
+data = {
+    'Name': ['John', 'Mary', 'Alex'],
+    'Salary': [5000, 7000, 6500]}, index=[0]
+
+
+df = pd.DataFrame(data)
+
+print("Data Loaded:")
+print(df)
