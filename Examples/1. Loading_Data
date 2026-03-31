@@ -1,5 +1,5 @@
 # THEORY:
-# Pandas is used to work with structured data (tables like Excel)
+# I used Pandas to work with structured data (tables like Excel)
 # We load data into a DataFrame
 
 import pandas as pd
