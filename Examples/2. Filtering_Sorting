@@ -1,1 +1,24 @@
+# THEORY:
+# I Used Filtering to get specific rows based on the given conditions.
+# Sorting is used to arrange the data of a returned query in ascending or descending order.
 
+import pandas as pd
+
+data = {
+    'Name': ['John', 'Mary', 'Alex'],
+    'Salary': [5000, 7000, 6500]
+}
+
+df = pd.DataFrame(data)
+
+# Filtering rows where Salary > 6000
+filtered_df = df[df['Salary'] > 6000]
+
+print("Filtered Data (Salary > 6000):")
+print(filtered_df)
+
+# Sorting by Salary
+sorted_df = df.sort_values(by='Salary', ascending=False)
+
+print("\nSorted Data (Highest Salary First):")
+print(sorted_df)
