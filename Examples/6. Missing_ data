@@ -1,1 +1,22 @@
+# THEORY:
+# Missing data is common in real-world datasets.
+# We handle it using fillna() or dropna()
 
+import pandas as pd
+import numpy as np
+
+data = {
+    'Name': ['John', 'Mary', 'Alex'],
+    'Salary': [5000, np.nan, 6500]
+}
+
+df = pd.DataFrame(data)
+
+print("Original Data:")
+print(df)
+
+# Filling missing values
+df['Salary'] = df['Salary'].fillna(df['Salary'].mean())
+
+print("\nAfter Filling Missing Values:")
+print(df)
