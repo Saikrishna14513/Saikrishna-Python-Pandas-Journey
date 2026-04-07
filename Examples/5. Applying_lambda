@@ -1,1 +1,18 @@
+# THEORY:
+# Lambda functions are used to apply custom operations to data
+# We use apply() function for transformations
 
+import pandas as pd
+
+data = {
+    'Name': ['John', 'Mary', 'Alex'],
+    'Salary': [5000, 7000, 6500]
+}
+
+df = pd.DataFrame(data)
+
+# Increasing salary by 10%
+df['Updated_Salary'] = df['Salary'].apply(lambda x: x * 1.10)
+
+print("Updated Salaries:")
+print(df)
